@@ -1,59 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Assignment 1</title>
-  <script src="./script.js"></script>
-  <script>
-    const sendDetails = () => {
-      let name = document.getElementById('name').value;
-      let email = document.getElementById('email').value;
-      let mobile = document.getElementById('mobile').value;
-      localStorage.setItem('name', name);
-      localStorage.setItem('email', email);
-      localStorage.setItem('mobile', mobile);
-    }
-  </script>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Page</title>
+    <link rel="stylesheet" href="./index.css">
 </head>
-
 <body>
-  <div>
-    <form onsubmit="sendDetails()" class="main_form" method="post"
-      action="/Assessments/M4 Lead (Ajith Tony A) Assessments/Assessment 1/verification.html">
-      <div class="flex-container">
-        <div>
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name">
-        </div>
-        <div>
-          <label for="email">E-mail</label>
-          <input type="email" name="email" id="email">
-        </div>
-        <div>
-          <label for="mobile">Mobile</label>
-          <input type="tel" name="mobile" id="mobile">
-        </div>
-        <div>
-          <label for="city">City</label>
-          <input type="text" name="city" id="city">
-        </div>
-        <div>
-          <label for="state">State</label>
-          <input type="text" name="state" id="state">
-        </div>
-        <div>
-          <label for="country">Country</label>
-          <input type="text" name="country" id="country">
-        </div>
-        <br><br>
-        <input type="submit" value="Create User">
-      </div>
+    <form method="post" action="next_page.html">
+        <h2>Registration form</h2>
+        <label>Username:</label>
+        <input id="username" type="text" placeholder="Sethuram">
+        <br>
+        <label>Email:</label>
+        <input id="email" type="text" placeholder="sethu@gmail.com">
+        <br>
+        <label>Phone number:</label>
+        <input id="phone_number" type="tel" placeholder="1111111111">
+        <br>
+        <input onclick="storeValues()" type="submit" value="Register">
     </form>
-  </div>
-</body>
 
+    <script>
+        const storeValues = () => {
+            let username = document.getElementById('username').value;
+            let email = document.getElementById('email').value;
+            let phone_number = document.getElementById('phone_number').value;
+            localStorage.setItem('username', username);
+            localStorage.setItem('email', email);
+            localStorage.setItem('phone_number', phone_number);
+        }
+    </script>
+</body>
 </html>
